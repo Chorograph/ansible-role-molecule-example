@@ -1,0 +1,21 @@
+---
+- name: Ensure groups exist
+  group:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ molecule_test_groups }}"
+
+- name: Add users from molecule_test_user_dict variable
+  user:
+    name: "{{ item.name }}"
+    comment: "{{ item.comment }}"
+    group: "{{ item.group }}"
+  with_items: "{{ molecule_test_user_dict }}"
+
+- name: Ensure directory exists.
+  file:
+    path: /tmp/testfolder
+    owner: "{{ item.name }}"
+    group: "{{ item.group }}"
+    state: directory
+  with_items: "{{ molecule_test_user_dict }}"

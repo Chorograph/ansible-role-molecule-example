@@ -1,0 +1,10 @@
+---
+molecule_test_groups:
+  - admin
+  - devops
+
+molecule_test_user_dict:
+  - name: "James"
+    comment: "James User"
+    group: "admin"
+    shell: "/bin/bash"
