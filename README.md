@@ -6,6 +6,6 @@ An ansible role example to show how to use molecule and test infra to test ansib
 Author Information
 ------------------
 
-James Alford
-Chorograph Ltd
+James Alford<br/>
+Chorograph Ltd<br/>
 www.chorograph.com
